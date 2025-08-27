@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import Flipbook from './Flipbook'
-import pdfFile from './assets/Valhora.pdf';
 
 export default function App() {
   const [file, setFile] = useState(null)
