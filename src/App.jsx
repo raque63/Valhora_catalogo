@@ -12,7 +12,7 @@ export default function App() {
         <div className="spacer" />
         <span className="badge">Valhora - Catálogo</span>
       </div>
-      <Flipbook src={file ? URL.createObjectURL(file) : pdfFile} />
+      <Flipbook src={file ? URL.createObjectURL(file) : '/Valhora.pdf'} />
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import screenfull from "screenfull";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpenCheck } from "lucide-react";
-import { pdfjs } from 'react-pdf';
+
 
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
 
