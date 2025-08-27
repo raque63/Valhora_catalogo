@@ -5,7 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpenCheck } from "lucide-react";
 
 
-import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
+import pdfWorker from 'https://valhora-catalogo-4nb2cc598-valhoras-projects.vercel.app/assets/pdf.worker.min-9e9f4a4b.mjs';
 
 pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 
