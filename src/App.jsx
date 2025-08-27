@@ -6,14 +6,14 @@ export default function App() {
   const [file, setFile] = useState(null)
 
   const src = file || '/Valhora.pdf'
-
+  const pdfSrc = import.meta.env.BASE_URL + 'Valhora.pdf';
   return (
     <div>
       <div className="toolbar">
         <div className="spacer" />
         <span className="badge">Valhora - Catálogo</span>
       </div>
-      <Flipbook src={file ? URL.createObjectURL(file) : '/Valhora.pdf'} />
+      <Flipbook src={file ? URL.createObjectURL(file) : pdfSrc} />
     </div>
   )
 }
