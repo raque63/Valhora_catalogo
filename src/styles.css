@@ -1,0 +1,103 @@
+:root {
+  --bg: #0b1020;
+  --panel: #0f172a;
+  --muted: #94a3b8;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0b1020 0%, #0a0f1f 100%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+.toolbar .spacer { flex: 1; }
+.toolbar input[type="file"] { display: none; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: #0b132a;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform .08s ease, background .2s ease, border .2s ease;
+  user-select: none;
+}
+.btn:hover { background: #0e1834; }
+.btn:active { transform: translateY(1px); }
+.btn.icon { padding: 8px; }
+.badge {
+  color: var(--muted);
+  border: 1px solid rgba(148,163,184,.2);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.viewer-wrap {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: calc(100% - 0px);
+}
+.stage {
+  position: relative;
+  height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.flipbook-outer {
+  position: relative;
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform .08s linear;
+}
+.flipbook {
+  box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 0 1px rgba(148,163,184,.12) inset;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a0f1f;
+}
+.page {
+  background: white;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.page canvas, .page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: white;
+}
+.hint {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 12px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  color: var(--muted);
+}
