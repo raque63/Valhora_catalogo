@@ -5,7 +5,8 @@ import pdfFile from './assets/Valhora.pdf';
 export default function App() {
   const [file, setFile] = useState(null)
 
-  const "https://drive.google.com/uc?export=view&id=1N6G7p3QgGj9oiif_-XODlD4G4OadZ1On"
+  const src = "https://drive.google.com/uc?export=view&id=1N6G7p3QgGj9oiif_-XODlD4G4OadZ1On"
+
   return (
     <div>
       <div className="toolbar">
