@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "vite build"
+    "build": "vite build",
+    "vercel-build": "npm ci && npm run build"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
