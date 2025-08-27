@@ -7,8 +7,7 @@ import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpe
 
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
 
-// pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
-pdfjs.GlobalWorkerOptions.workerSrc= pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 
 export default function Flipbook( { src } ) {
   const bookRef = useRef(null);
