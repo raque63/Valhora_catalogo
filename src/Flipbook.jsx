@@ -4,10 +4,7 @@ import screenfull from "screenfull";
 import { Document, Page, pdfjs } from "react-pdf";
 import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpenCheck } from "lucide-react";
 
-
-import pdfWorker from '/pdf.worker.min.js';
-
-pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 export default function Flipbook( { src } ) {
   const bookRef = useRef(null);
