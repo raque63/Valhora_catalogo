@@ -8,9 +8,9 @@ import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpe
 
 // pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 
-import pdfWorker from 'pdfjs-dist/legacy/build/pdf.worker.entry';
+import workerSrc from 'pdfjs-dist/legacy/build/pdf.worker.min.js?url'; // ✅ importa como URL
 
-pdfjs.GlobalWorkerOptions.workerPort = new pdfjs.Worker(pdfWorker);
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
 
 export default function Flipbook( { src } ) {
   const bookRef = useRef(null);
