@@ -4,9 +4,11 @@ import screenfull from "screenfull";
 import { Document, Page, pdfjs } from "react-pdf";
 import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpenCheck } from "lucide-react";
 
-import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
+// import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
+
+// pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 
 export default function Flipbook( { src } ) {
   const bookRef = useRef(null);
