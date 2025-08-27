@@ -4,7 +4,13 @@ import screenfull from "screenfull";
 import { Document, Page, pdfjs } from "react-pdf";
 import { Maximize, Minimize, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, BookOpenCheck } from "lucide-react";
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+// import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
+
+// pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
+
+import pdfWorker from 'pdfjs-dist/legacy/build/pdf.worker.entry';
+
+pdfjs.GlobalWorkerOptions.workerPort = new pdfjs.Worker(pdfWorker);
 
 export default function Flipbook( { src } ) {
   const bookRef = useRef(null);
@@ -66,7 +72,7 @@ export default function Flipbook( { src } ) {
       <div className="stage">
         <div ref={outerRef} style={{ transform: `scale(${zoom})` }}>
           <Document
-            file= {{ url: "/valhora.pdf" }}
+            file= {src}
             onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           >
             <HTMLFlipBook
