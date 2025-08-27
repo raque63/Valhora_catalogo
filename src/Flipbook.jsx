@@ -70,7 +70,7 @@ export default function Flipbook( { src } ) {
       <div className="stage">
         <div ref={outerRef} style={{ transform: `scale(${zoom})` }}>
           <Document
-            file= {src}
+            file= {{ url: "/valhora.pdf" }}
             onLoadSuccess={({ numPages }) => setNumPages(numPages)}
           >
             <HTMLFlipBook
